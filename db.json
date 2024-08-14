@@ -1,0 +1,58 @@
+{
+  "gifts": [
+    {
+      "id": "1",
+      "name": "Geladeira Eletrolux",
+      "price": "3.500",
+      "image": "./src/assets/img/geladeira.png"
+    },
+    {
+      "id": "2",
+      "name": "Smart TV 55 Polegadas",
+      "price": "5.500",
+      "image": "./src/assets/img/tv.png"
+    },
+    {
+      "id": "3",
+      "name": "Panela de Pressão Elétrica",
+      "price": "500",
+      "image": "./src/assets/img/panela.png"
+    },
+    {
+      "id": "4",
+      "name": "Conjunto de Talheres Inox",
+      "price": "300",
+      "image": "./src/assets/img/talheres.png"
+    },
+    {
+      "id": "5",
+      "name": "Forno Elétrico",
+      "price": "1.899",
+      "image": "./src/assets/img/forno.png"
+    },
+    {
+      "id": "6",
+      "name": "Jogo de Toalhas",
+      "price": "240",
+      "image": "./src/assets/img/toalhas.png"
+    },
+    {
+      "id": "7",
+      "name": "Cafeteira Expresso",
+      "price": "620",
+      "image": "./src/assets/img/cafeteira.png"
+    },
+    {
+      "id": "8",
+      "name": "Aspirador de Pó",
+      "price": "350",
+      "image": "./src/assets/img/aspirador.png"
+    },
+    {
+      "id": "9",
+      "name": "Máquina de Lavar Roupas",
+      "price": "2.800",
+      "image": "./src/assets/img/maquina-lavar.png"
+    }
+  ]
+}

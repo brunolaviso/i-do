@@ -1,4 +1,7 @@
+import { ShoppingBag } from 'lucide-react'
 import { useEffect, useState } from 'react'
+
+import { api } from '@/lib/axios'
 
 interface Gift {
   id: number
@@ -10,16 +13,16 @@ interface Gift {
 export function Card() {
   const [gifts, setGifts] = useState<Gift[]>([])
 
-  // useEffect(() => {
-  //   axios
-  //     .get('http://localhost:3333/gifts')
-  //     .then((response) => {
-  //       setGifts(response.data)
-  //     })
-  //     .catch((error) => {
-  //       console.error('Erro ao buscar presentes:', error)
-  //     })
-  // }, [])
+  useEffect(() => {
+    api
+      .get('gifts')
+      .then((response) => {
+        setGifts(response.data)
+      })
+      .catch((error) => {
+        console.error('Erro ao buscar presentes:', error)
+      })
+  }, [])
 
   return (
     <>
@@ -53,7 +56,7 @@ function GiftCard({ gift }: { gift: Gift }) {
         </div>
         <div className="card-button">
           <button className="button">
-            {/* <ShoppingBag className="button-img" /> <span>Comprar</span> */}
+            <ShoppingBag className="button-img" /> <span>Comprar</span>
           </button>
         </div>
       </div>
