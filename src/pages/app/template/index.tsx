@@ -5,6 +5,7 @@ import { Couple } from '@/@types/couple'
 import { couples } from '@/api/couples'
 
 import { Template1 } from '../template1/Template'
+import { Template2 } from '../template2'
 
 export function TemplatePage() {
   const { slug } = useParams<{ slug: string }>()
@@ -18,5 +19,5 @@ export function TemplatePage() {
   if (!couple) return <div>Carregando</div>
 
   if (couple.template_option === 1) return <Template1 couple={couple} />
-  if (couple.template_option === 2) return <div>Template 2</div>
+  if (couple.template_option === 2) return <Template2 couple={couple} />
 }
