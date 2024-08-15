@@ -1,3 +1,4 @@
+import { Couple } from '@/@types/couple'
 import { supabase } from '@/lib/supabase'
 
 export const couples = {
@@ -13,7 +14,7 @@ export const couples = {
   async getOne(slug: string) {
     const { data: couple, error } = await supabase
       .from('couples')
-      .select('*')
+      .select<'*', Couple>('*')
       .eq('slug', slug)
       .single()
 

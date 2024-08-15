@@ -1,3 +1,5 @@
+import { Couple } from '@/@types/couple'
+
 import { About } from './components/about'
 import { Carrossel } from './components/carrossel'
 import { Confirm } from './components/confirm'
@@ -7,7 +9,7 @@ import { Location } from './components/location'
 import { Message } from './components/message'
 
 interface Template1Props {
-  couple: any
+  couple: Couple
 }
 
 export function Template1({ couple }: Template1Props) {
