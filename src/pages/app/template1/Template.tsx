@@ -6,7 +6,13 @@ import { Gift } from './components/gift'
 import { Location } from './components/location'
 import { Message } from './components/message'
 
-export function Template1() {
+interface Template1Props {
+  couple: any
+}
+
+export function Template1({ couple }: Template1Props) {
+  console.log(couple)
+
   return (
     <>
       <Carrossel />
