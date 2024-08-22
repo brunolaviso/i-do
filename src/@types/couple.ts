@@ -15,7 +15,7 @@ export interface Gift {
 
 export interface Couple {
   id: number
-  created_at: '2024-08-14T23:15:05.394236+00:00'
+  created_at: string
   bio: string
   images: string[]
   gifts: Gift[]

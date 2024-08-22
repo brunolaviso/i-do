@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom'
 import { Couple } from '@/@types/couple'
 import { couples } from '@/api/couples'
 
-import { Template1 } from '../template1/Template'
+import { Template1 } from '../template1'
 import { Template2 } from '../template2'
 
 export function TemplatePage() {
