@@ -12,32 +12,20 @@ export const couples = {
     return data
   },
   async getOne(slug: string) {
+    const select = `
+      id,
+      created_at,
+      bio,
+      images,
+      slug,
+      template_option,
+      wife:people!couples_wife_fkey(id, name),
+      husband:people!couples_husband_fkey(id, name)
+    `
+
     const { data, error } = await supabase
       .from('couples')
-      .select<
-        `
-        id,
-        created_at,
-        bio,
-        images,
-        slug,
-        template_option,
-        wife:people!couples_wife_fkey(id, name),
-        husband:people!couples_husband_fkey(id, name)
-      `,
-        Couple
-      >(
-        `
-        id,
-        created_at,
-        bio,
-        images,
-        slug,
-        template_option,
-        wife:people!couples_wife_fkey(id, name),
-        husband:people!couples_husband_fkey(id, name)
-      `,
-      )
+      .select<typeof select, Couple>(select)
       .eq('slug', slug)
       .single()
 
