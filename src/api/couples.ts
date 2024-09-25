@@ -19,6 +19,13 @@ export const couples = {
       images,
       slug,
       template_option,
+      gift_intro,
+      ceremony_intro,
+      ceremony_img,
+      ceremony_loc,
+      event_intro,
+      event_img,
+      event_loc,
       wife:people!couples_wife_fkey(id, name),
       husband:people!couples_husband_fkey(id, name)
     `

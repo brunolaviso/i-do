@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom'
 
 import { Couple } from '@/@types/couple'
 import { couples } from '@/api/couples'
+import { gifts } from '@/api/gifts'
 
 import { Template1 } from '../template1'
 import { Template2 } from '../template2'
@@ -13,7 +14,11 @@ export function TemplatePage() {
 
   useEffect(() => {
     if (!slug) return
-    couples.getOne(slug).then((data) => setCouple(data))
+    couples.getOne(slug).then((data) => {
+      gifts.getAllByCoupleId({ coupleId: data.id }).then((gifts) => {
+        setCouple({ ...data, gifts })
+      })
+    })
   }, [slug])
 
   if (!couple) return <div>Carregando</div>

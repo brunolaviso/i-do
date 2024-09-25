@@ -7,14 +7,15 @@ export interface Person {
 
 export interface Gift {
   id: string
+  created_at: string
   title: string
-  price: string
-  image: string
+  price: number
   url: string
+  image: string
 }
 
 export interface Couple {
-  id: number
+  id: string
   created_at: string
   bio: string
   images: string[]
@@ -23,4 +24,11 @@ export interface Couple {
   husband: Person
   slug: string
   template_option: number
+  gift_intro: string
+  ceremony_intro: string
+  ceremony_img: string
+  ceremony_loc: string
+  event_intro: string
+  event_img: string
+  event_loc: string
 }
