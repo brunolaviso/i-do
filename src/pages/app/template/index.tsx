@@ -23,6 +23,6 @@ export function TemplatePage() {
 
   if (!couple) return <div>Carregando</div>
 
-  if (couple.template_option === 1) return <Template1 couple={couple} />
-  if (couple.template_option === 2) return <Template2 couple={couple} />
+  if (couple.template_option === 2) return <Template1 couple={couple} />
+  if (couple.template_option === 1) return <Template2 couple={couple} />
 }

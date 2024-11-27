@@ -26,8 +26,8 @@ export const couples = {
       event_intro,
       event_img,
       event_loc,
-      wife:people!couples_wife_fkey(id, name),
-      husband:people!couples_husband_fkey(id, name)
+      wife:people!couples_wife_fkey(id, name, bio, image),
+      husband:people!couples_husband_fkey(id, name, bio, image)
     `
 
     const { data, error } = await supabase

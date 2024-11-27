@@ -11,7 +11,7 @@ export function Template2({ couple }: TemplateProps) {
       <h1>
         {couple.wife.name} & {couple.husband.name}
       </h1>
-      {/* <img src={couple.images[1]} alt="" /> */}
+      {/* <img src={couple.images[0]} alt="" /> */}
       {couple.images.map((img) => (
         <img key={img} src={img} alt="" />
       ))}
@@ -24,12 +24,12 @@ export function Template2({ couple }: TemplateProps) {
         </div>
         <p>{couple.gift_intro}</p>
         <div id="gifts-list">
-          {couple.gifts.map((gift) => (
-            <div key={gift.id}>
-              <img src={gift.image} alt="" />
-              <h3>{gift.title}</h3>
-              <p>{gift.price}</p>
-              <a href={gift.url} target="_blank" rel="noreferrer">
+          {couple.gifts.map((item) => (
+            <div key={item.id}>
+              <img src={item.image} alt="" />
+              <h3>{item.title}</h3>
+              <p>{item.price}</p>
+              <a href={item.url} target="_blank" rel="noreferrer">
                 Comprar
               </a>
             </div>

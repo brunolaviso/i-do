@@ -1,7 +1,13 @@
+import { Gift as GiftType } from '@/@types/couple'
+
 import { Card } from '../card'
 import { SectionTitle } from '../section-title'
 
-export function Gift() {
+interface GiftProps {
+  gifts: GiftType[]
+}
+
+export function Gift({ gifts }: GiftProps) {
   return (
     <div className="gift">
       <div className="gift-content">
@@ -9,7 +15,9 @@ export function Gift() {
           <SectionTitle title="Presentes" />
         </div>
         <div className="gift-list">
-          <Card />
+          {gifts.map((gift) => (
+            <Card key={gift.id} gift={gift} />
+          ))}
         </div>
       </div>
     </div>

@@ -1,39 +1,12 @@
 import { ShoppingBag } from 'lucide-react'
-import { useEffect, useState } from 'react'
 
-import { api } from '@/lib/axios'
+import { Gift } from '@/@types/couple'
 
-interface Gift {
-  id: number
-  name: string
-  price: number
-  image: string
+interface CardProps {
+  gift: Gift
 }
 
-export function Card() {
-  const [gifts, setGifts] = useState<Gift[]>([])
-
-  useEffect(() => {
-    api
-      .get('gifts')
-      .then((response) => {
-        setGifts(response.data)
-      })
-      .catch((error) => {
-        console.error('Erro ao buscar presentes:', error)
-      })
-  }, [])
-
-  return (
-    <>
-      {gifts.map((gift) => (
-        <GiftCard key={gift.id} gift={gift} />
-      ))}
-    </>
-  )
-}
-
-function GiftCard({ gift }: { gift: Gift }) {
+export function Card({ gift }: CardProps) {
   const formatPriceToBRL = (price: number) => {
     return (
       'R$ ' +
@@ -48,10 +21,10 @@ function GiftCard({ gift }: { gift: Gift }) {
     <>
       <div className="card">
         <div className="card-image">
-          <img src={gift.image} alt={gift.name} />
+          <img src={gift.image} alt={gift.title} />
         </div>
         <div className="card-text">
-          <h1>{gift.name}</h1>
+          <h1>{gift.title}</h1>
           <h3>Preço: {formatPriceToBRL(gift.price)}</h3>
         </div>
         <div className="card-button">

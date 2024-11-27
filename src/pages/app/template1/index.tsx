@@ -18,8 +18,8 @@ export function Template1({ couple }: Template1Props) {
   return (
     <>
       <Carrossel />
-      <About />
-      <Gift />
+      <About couple={couple} />
+      <Gift gifts={couple.gifts} />
       <Message />
       <Confirm />
       <Location />
